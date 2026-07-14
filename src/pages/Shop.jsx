@@ -41,10 +41,15 @@ const Shop = () => {
         <div className="lg:w-3/4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => (
              <div key={item} className="bg-white rounded-lg shadow-sm hover:shadow-xl transition-all border border-gray-100 p-4">
-                <div className="h-48 bg-gray-100 rounded-md mb-4 flex items-center justify-center relative overflow-hidden group">
-                   <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity gap-3">
-                      <Link to="/cart" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-[#ffa800] hover:text-white text-gray-800 transition-colors">🛒</Link>
-                      <Link to="/product-details" className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-[#ffa800] hover:text-white text-gray-800 transition-colors">👁</Link>
+                <div className="h-48 bg-gray-50 rounded-md mb-4 flex items-center justify-center relative overflow-hidden group border border-gray-100">
+                   <img src={`/${(item % 6) + 1}.png`} alt="AI Product" className="w-[70%] h-auto object-contain group-hover:scale-110 transition-transform duration-500 drop-shadow-md" />
+                   <div className="absolute inset-0 bg-[#0CA59D]/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity gap-3 z-10">
+                      <Link to="/cart" className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-[#ffa800] hover:text-white text-[#0CA59D] transition-colors shadow-lg transform hover:-translate-y-1">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                      </Link>
+                      <Link to="/product-details" className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-[#ffa800] hover:text-white text-[#0CA59D] transition-colors shadow-lg transform hover:-translate-y-1">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                      </Link>
                    </div>
                 </div>
                 <h3 className="font-bold text-gray-800 text-lg mb-2">

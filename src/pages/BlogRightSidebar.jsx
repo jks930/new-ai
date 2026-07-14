@@ -24,8 +24,10 @@ const BlogRightSidebar = () => {
         <div className="lg:w-2/3 space-y-12">
            {[1, 2, 3].map((item) => (
              <div key={item} className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 group">
-                <div className="h-80 bg-gray-200 relative overflow-hidden">
-                   <div className="absolute top-6 left-6 bg-[#0CA59D] text-white text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider z-10">AI & Tech</div>
+                <div className="h-48 bg-gray-200 overflow-hidden relative group">
+                   <img src={`/${(item % 2 === 0) ? '3.jpg.jpeg' : '1.jpg.jpeg'}`} alt="AI Blog Post" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                   <div className="absolute inset-0 bg-[#0CA59D]/20 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                   <div className="absolute top-4 left-4 bg-[#0CA59D] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider z-10">Technology</div>
                 </div>
                 <div className="p-8 md:p-10">
                    <div className="flex items-center gap-6 text-sm text-gray-500 mb-4 border-b pb-4">

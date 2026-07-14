@@ -21,11 +21,12 @@ const BlogGrid = () => {
       
       <main className="flex-grow max-w-7xl mx-auto px-4 lg:px-8 py-20 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-           {[1, 2, 3, 4, 5, 6].map((item) => (
+           {[1, 2, 3, 4, 5, 6].map((item, i) => (
              <div key={item} className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all group">
-                <div className="h-60 bg-gray-200 relative overflow-hidden">
+                <div className="h-56 bg-gray-200 overflow-hidden relative group">
+                   <img src={`/${(i % 2 === 0) ? '3.jpg.jpeg' : '1.jpg.jpeg'}`} alt="AI Blog Post" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                   <div className="absolute inset-0 bg-[#0CA59D]/20 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                    <div className="absolute top-4 left-4 bg-[#0CA59D] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider z-10">Technology</div>
-                   <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity"></div>
                 </div>
                 <div className="p-8">
                    <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">

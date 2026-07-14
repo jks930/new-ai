@@ -26,12 +26,22 @@ const Navbar = () => {
     }
   }, [isMobileMenuOpen]);
 
+  // Premium Floating Dropdown Link Style
+  const dropdownLinkStyle = "block px-7 py-3.5 text-[15.5px] font-semibold text-gray-700 hover:text-[#0CA59D] hover:bg-[#0CA59D]/5 hover:pl-9 transition-all duration-300 relative before:content-[''] before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-[#0CA59D] before:opacity-0 hover:before:opacity-100";
+
+  // Dropdown Container Style (Floating, detached, beautiful shadow)
+  const dropdownContainerStyle = "absolute left-0 top-[120%] w-[250px] bg-white text-gray-700 shadow-[0_30px_60px_rgba(0,0,0,0.12)] opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50 py-3 rounded-2xl border border-gray-100 transform translate-y-4 group-hover:translate-y-0 before:content-[''] before:absolute before:-top-2 before:left-8 before:w-4 before:h-4 before:bg-white before:rotate-45 before:border-l before:border-t before:border-gray-100";
+  
+  // Nested Dropdown Container Style
+  const nestedDropdownContainerStyle = "absolute left-[105%] top-0 w-[240px] bg-white text-gray-700 shadow-[0_30px_60px_rgba(0,0,0,0.12)] opacity-0 group-hover/sub:opacity-100 invisible group-hover/sub:visible transition-all duration-300 z-50 py-3 rounded-2xl border border-gray-100 transform translate-x-4 group-hover/sub:translate-x-0";
+
+
   return (
     <>
       <nav className={`w-full z-40 transition-all duration-300 ${isSticky ? 'fixed top-0 left-0 bg-[#0CA59D] shadow-md py-3' : 'absolute top-0 left-0 bg-transparent py-4 lg:py-5'}`}>
         <div className="max-w-[1400px] mx-auto px-4 lg:px-12 flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 text-white font-bold text-[28px] tracking-wide cursor-pointer z-50">
+          <Link to="/" className="flex items-center gap-2 text-white font-bold text-[28px] tracking-wide cursor-pointer z-50 hover:opacity-90 transition-opacity">
             <svg className="w-9 h-9 text-white" viewBox="0 0 24 24" fill="currentColor">
                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v4h-2zm0 6h2v2h-2z" />
                <circle cx="7" cy="12" r="1.5" />
@@ -62,91 +72,88 @@ const Navbar = () => {
 
             {/* Pages */}
             <div className="relative group">
-              <Link to="#" className="text-white hover:text-[#ffa800] transition-colors flex items-center gap-1.5 py-4">
+              <Link to="#" className="text-white hover:text-[#ffa800] transition-colors flex items-center gap-1.5 py-4 cursor-pointer">
                 Pages 
-                <svg className="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7"></path></svg>
+                <svg className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7"></path></svg>
               </Link>
               {/* Pages Dropdown */}
-              <div className="absolute left-0 top-full mt-0 w-60 bg-white text-gray-700 shadow-2xl opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50 py-3 rounded-b-lg border-t-4 border-[#0CA59D] transform origin-top scale-y-0 group-hover:scale-y-100">
-                <Link to="/about" className="block px-6 py-2.5 hover:text-[#0CA59D] hover:bg-gray-50 transition-colors">About Us</Link>
-                <Link to="/features" className="block px-6 py-2.5 hover:text-[#0CA59D] hover:bg-gray-50 transition-colors">Features</Link>
-                <Link to="/team" className="block px-6 py-2.5 hover:text-[#0CA59D] hover:bg-gray-50 transition-colors">Team</Link>
-                <Link to="/pricing" className="block px-6 py-2.5 hover:text-[#0CA59D] hover:bg-gray-50 transition-colors">Pricing</Link>
+              <div className={dropdownContainerStyle}>
+                <Link to="/about" className={dropdownLinkStyle}>Corporate Overview</Link>
+                <Link to="/features" className={dropdownLinkStyle}>Platform Features</Link>
+                <Link to="/team" className={dropdownLinkStyle}>Leadership Team</Link>
+                <Link to="/pricing" className={dropdownLinkStyle}>Enterprise Pricing</Link>
                 
                 {/* Nested Shop */}
                 <div className="relative group/sub">
-                  <Link to="/shop" className="px-6 py-2.5 hover:text-[#0CA59D] hover:bg-gray-50 transition-colors flex justify-between items-center w-full">
-                    Shop
-                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
+                  <Link to="/shop" className={`${dropdownLinkStyle} flex justify-between items-center w-full hover:pl-8`}>
+                    Store
+                    <svg className="w-4 h-4 text-gray-400 group-hover/sub:text-[#0CA59D] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
                   </Link>
-                  <div className="absolute left-full top-0 w-56 bg-white text-gray-700 shadow-2xl opacity-0 group-hover/sub:opacity-100 invisible group-hover/sub:visible transition-all duration-300 z-50 py-3 rounded-lg border-l-4 border-[#0CA59D]">
-                    <Link to="/shop" className="block px-6 py-2.5 hover:text-[#0CA59D] hover:bg-gray-50 transition-colors">Shop</Link>
-                    <Link to="/product-details" className="block px-6 py-2.5 hover:text-[#0CA59D] hover:bg-gray-50 transition-colors">Single Products</Link>
-                    <Link to="/cart" className="block px-6 py-2.5 hover:text-[#0CA59D] hover:bg-gray-50 transition-colors">Cart</Link>
-                    <Link to="/checkout" className="block px-6 py-2.5 hover:text-[#0CA59D] hover:bg-gray-50 transition-colors">Checkout</Link>
+                  <div className={nestedDropdownContainerStyle}>
+                    <Link to="/shop" className={dropdownLinkStyle}>Enterprise Store</Link>
+                    <Link to="/product-details" className={dropdownLinkStyle}>License Details</Link>
+                    <Link to="/cart" className={dropdownLinkStyle}>Shopping Cart</Link>
+                    <Link to="/checkout" className={dropdownLinkStyle}>Secure Checkout</Link>
                   </div>
                 </div>
 
                 {/* Nested Blog */}
                 <div className="relative group/sub">
-                  <Link to="/blog" className="px-6 py-2.5 hover:text-[#0CA59D] hover:bg-gray-50 transition-colors flex justify-between items-center w-full">
-                    Blog
-                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
+                  <Link to="/blog" className={`${dropdownLinkStyle} flex justify-between items-center w-full hover:pl-8`}>
+                    Insights
+                    <svg className="w-4 h-4 text-gray-400 group-hover/sub:text-[#0CA59D] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
                   </Link>
-                  <div className="absolute left-full top-0 w-56 bg-white text-gray-700 shadow-2xl opacity-0 group-hover/sub:opacity-100 invisible group-hover/sub:visible transition-all duration-300 z-50 py-3 rounded-lg border-l-4 border-[#0CA59D]">
-                    <Link to="/blog" className="block px-6 py-2.5 hover:text-[#0CA59D] hover:bg-gray-50 transition-colors">Blog Grid</Link>
-                    <Link to="/blog-sidebar" className="block px-6 py-2.5 hover:text-[#0CA59D] hover:bg-gray-50 transition-colors">Blog Right Sidebar</Link>
-                    <Link to="/blog-details" className="block px-6 py-2.5 hover:text-[#0CA59D] hover:bg-gray-50 transition-colors">Blog Details</Link>
+                  <div className={nestedDropdownContainerStyle}>
+                    <Link to="/blog" className={dropdownLinkStyle}>Latest Insights</Link>
+                    <Link to="/blog-sidebar" className={dropdownLinkStyle}>Featured Articles</Link>
+                    <Link to="/blog-details" className={dropdownLinkStyle}>In-depth Analysis</Link>
                   </div>
                 </div>
 
-                <Link to="/404" className="block px-6 py-2.5 hover:text-[#0CA59D] hover:bg-gray-50 transition-colors">404 Error</Link>
-                <Link to="/coming-soon" className="block px-6 py-2.5 hover:text-[#0CA59D] hover:bg-gray-50 transition-colors">Coming Soon</Link>
-                <Link to="/faq" className="block px-6 py-2.5 hover:text-[#0CA59D] hover:bg-gray-50 transition-colors">FAQ</Link>
+                <Link to="/faq" className={dropdownLinkStyle}>Knowledge Base</Link>
               </div>
             </div>
 
             {/* Services */}
             <div className="relative group">
-              <Link to="#" className="text-white hover:text-[#ffa800] transition-colors flex items-center gap-1.5 py-4">
+              <Link to="#" className="text-white hover:text-[#ffa800] transition-colors flex items-center gap-1.5 py-4 cursor-pointer">
                 Services 
-                <svg className="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7"></path></svg>
+                <svg className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7"></path></svg>
               </Link>
-              <div className="absolute left-0 top-full mt-0 w-56 bg-white text-gray-700 shadow-2xl opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50 py-3 rounded-b-lg border-t-4 border-[#0CA59D] transform origin-top scale-y-0 group-hover:scale-y-100">
-                <Link to="/services-1" className="block px-6 py-2.5 hover:text-[#0CA59D] hover:bg-gray-50 transition-colors">Services Style 1</Link>
-                <Link to="/services-2" className="block px-6 py-2.5 hover:text-[#0CA59D] hover:bg-gray-50 transition-colors">Services Style 2</Link>
-                <Link to="/services-details" className="block px-6 py-2.5 hover:text-[#0CA59D] hover:bg-gray-50 transition-colors">Services Details</Link>
+              <div className={dropdownContainerStyle}>
+                <Link to="/services-1" className={dropdownLinkStyle}>Core Competencies</Link>
+                <Link to="/services-2" className={dropdownLinkStyle}>Enterprise Solutions</Link>
+                <Link to="/services-details" className={dropdownLinkStyle}>Architecture Specs</Link>
               </div>
             </div>
 
             {/* Shop */}
             <div className="relative group">
-              <Link to="/shop" className="text-white hover:text-[#ffa800] transition-colors flex items-center gap-1.5 py-4">
-                Shop 
-                <svg className="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7"></path></svg>
+              <Link to="/shop" className="text-white hover:text-[#ffa800] transition-colors flex items-center gap-1.5 py-4 cursor-pointer">
+                Store 
+                <svg className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7"></path></svg>
               </Link>
-              <div className="absolute left-0 top-full mt-0 w-56 bg-white text-gray-700 shadow-2xl opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50 py-3 rounded-b-lg border-t-4 border-[#0CA59D] transform origin-top scale-y-0 group-hover:scale-y-100">
-                <Link to="/shop" className="block px-6 py-2.5 hover:text-[#0CA59D] hover:bg-gray-50 transition-colors">Shop</Link>
-                <Link to="/product-details" className="block px-6 py-2.5 hover:text-[#0CA59D] hover:bg-gray-50 transition-colors">Single Products</Link>
-                <Link to="/cart" className="block px-6 py-2.5 hover:text-[#0CA59D] hover:bg-gray-50 transition-colors">Cart</Link>
-                <Link to="/checkout" className="block px-6 py-2.5 hover:text-[#0CA59D] hover:bg-gray-50 transition-colors">Checkout</Link>
+              <div className={dropdownContainerStyle}>
+                <Link to="/shop" className={dropdownLinkStyle}>Enterprise Store</Link>
+                <Link to="/product-details" className={dropdownLinkStyle}>License Details</Link>
+                <Link to="/cart" className={dropdownLinkStyle}>Shopping Cart</Link>
+                <Link to="/checkout" className={dropdownLinkStyle}>Secure Checkout</Link>
               </div>
             </div>
 
             {/* Blog */}
             <div className="relative group">
-              <Link to="/blog" className="text-white hover:text-[#ffa800] transition-colors flex items-center gap-1.5 py-4">
-                Blog 
-                <svg className="w-3 h-3 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7"></path></svg>
+              <Link to="/blog" className="text-white hover:text-[#ffa800] transition-colors flex items-center gap-1.5 py-4 cursor-pointer">
+                Insights 
+                <svg className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7"></path></svg>
               </Link>
-              <div className="absolute left-0 top-full mt-0 w-56 bg-white text-gray-700 shadow-2xl opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50 py-3 rounded-b-lg border-t-4 border-[#0CA59D] transform origin-top scale-y-0 group-hover:scale-y-100">
-                <Link to="/blog" className="block px-6 py-2.5 hover:text-[#0CA59D] hover:bg-gray-50 transition-colors">Blog Grid</Link>
-                <Link to="/blog-sidebar" className="block px-6 py-2.5 hover:text-[#0CA59D] hover:bg-gray-50 transition-colors">Blog Right Sidebar</Link>
-                <Link to="/blog-details" className="block px-6 py-2.5 hover:text-[#0CA59D] hover:bg-gray-50 transition-colors">Blog Details</Link>
+              <div className={dropdownContainerStyle}>
+                <Link to="/blog" className={dropdownLinkStyle}>Latest Insights</Link>
+                <Link to="/blog-sidebar" className={dropdownLinkStyle}>Featured Articles</Link>
+                <Link to="/blog-details" className={dropdownLinkStyle}>In-depth Analysis</Link>
               </div>
             </div>
 
-            <Link to="/features" className="text-white hover:text-[#ffa800] transition-colors py-4">Features</Link>
             <Link to="/contact" className="text-white hover:text-[#ffa800] transition-colors py-4">Contact</Link>
           </div>
 
@@ -162,7 +169,7 @@ const Navbar = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
             </button>
-            <Link to="/contact" className="bg-[#ffa800] hover:bg-orange-500 text-white font-bold py-3.5 px-8 rounded-full shadow-[0_4px_14px_0_rgba(255,168,0,0.39)] transition-all text-[15px] ml-2">
+            <Link to="/contact" className="bg-[#ffa800] hover:bg-orange-500 text-white font-bold py-3.5 px-8 rounded-full shadow-[0_4px_14px_0_rgba(255,168,0,0.39)] transition-all text-[15px] ml-2 transform hover:-translate-y-1">
               Free Quote
             </Link>
           </div>
@@ -206,11 +213,11 @@ const Navbar = () => {
         <div className="flex-grow overflow-y-auto py-6 px-4">
            <ul className="flex flex-col space-y-2">
               <li><Link to="/" className="block text-gray-800 font-bold text-lg p-3 rounded-lg hover:bg-[#0CA59D]/10 hover:text-[#0CA59D] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</Link></li>
-              <li><Link to="/about" className="block text-gray-800 font-bold text-lg p-3 rounded-lg hover:bg-[#0CA59D]/10 hover:text-[#0CA59D] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link></li>
-              <li><Link to="/services-1" className="block text-gray-800 font-bold text-lg p-3 rounded-lg hover:bg-[#0CA59D]/10 hover:text-[#0CA59D] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Services</Link></li>
-              <li><Link to="/features" className="block text-gray-800 font-bold text-lg p-3 rounded-lg hover:bg-[#0CA59D]/10 hover:text-[#0CA59D] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Features</Link></li>
-              <li><Link to="/shop" className="block text-gray-800 font-bold text-lg p-3 rounded-lg hover:bg-[#0CA59D]/10 hover:text-[#0CA59D] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Shop</Link></li>
-              <li><Link to="/blog" className="block text-gray-800 font-bold text-lg p-3 rounded-lg hover:bg-[#0CA59D]/10 hover:text-[#0CA59D] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Blog</Link></li>
+              <li><Link to="/about" className="block text-gray-800 font-bold text-lg p-3 rounded-lg hover:bg-[#0CA59D]/10 hover:text-[#0CA59D] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Corporate Overview</Link></li>
+              <li><Link to="/services-1" className="block text-gray-800 font-bold text-lg p-3 rounded-lg hover:bg-[#0CA59D]/10 hover:text-[#0CA59D] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Core Competencies</Link></li>
+              <li><Link to="/services-2" className="block text-gray-800 font-bold text-lg p-3 rounded-lg hover:bg-[#0CA59D]/10 hover:text-[#0CA59D] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Enterprise Solutions</Link></li>
+              <li><Link to="/shop" className="block text-gray-800 font-bold text-lg p-3 rounded-lg hover:bg-[#0CA59D]/10 hover:text-[#0CA59D] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Store</Link></li>
+              <li><Link to="/blog" className="block text-gray-800 font-bold text-lg p-3 rounded-lg hover:bg-[#0CA59D]/10 hover:text-[#0CA59D] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Insights</Link></li>
               <li><Link to="/contact" className="block text-gray-800 font-bold text-lg p-3 rounded-lg hover:bg-[#0CA59D]/10 hover:text-[#0CA59D] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Contact</Link></li>
            </ul>
         </div>
