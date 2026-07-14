@@ -35,24 +35,29 @@ const HeroSection = () => {
       <div className="max-w-[1320px] mx-auto px-4 lg:px-8 relative z-20 flex flex-col lg:flex-row items-center justify-between w-full">
         
         {/* Left Content Area */}
-        <div className="lg:w-[50%] text-white text-center lg:text-left pt-4 lg:pt-0">
+        <div className="lg:w-[50%] text-white text-center lg:text-left pt-10 lg:pt-0">
           
-          <p className="text-[16px] lg:text-[18px] font-medium tracking-wide mb-4 text-white/90">
-            Artificial Intelligence (AI)
-          </p>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6 mx-auto lg:mx-0">
+             <span className="w-2 h-2 rounded-full bg-[#ffa800] animate-pulse"></span>
+             <span className="text-[13px] md:text-[14px] font-bold tracking-widest text-[#ffa800] uppercase">Next-Gen Cognitive Intelligence</span>
+          </div>
           
-          <h1 className="text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[1.1] mb-6 tracking-tight text-white drop-shadow-sm">
-             Work smarter, <br/>
-             together.
+          <h1 className="text-[42px] sm:text-[54px] md:text-[64px] lg:text-[76px] font-extrabold leading-[1.05] mb-6 tracking-tight text-white drop-shadow-lg">
+             The Future of <br className="hidden lg:block" />
+             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-[#ffa800]">Autonomous</span> AI.
           </h1>
           
-          <p className="text-[16px] md:text-[17px] text-white/80 mb-10 max-w-[540px] leading-[1.8] font-normal mx-auto lg:mx-0">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+          <p className="text-[16px] md:text-[18px] text-white/90 mb-10 max-w-[600px] leading-[1.9] font-medium mx-auto lg:mx-0 drop-shadow-sm">
+            Deploy scalable, hyper-secure neural processing pipelines directly into your enterprise architecture. Automate the impossible, predict market shifts in real-time, and eradicate latency with our quantum-resistant edge computing models.
           </p>
           
-          <div className="flex justify-center lg:justify-start">
-             <Link to="/contact" className="bg-[#ffa800] hover:bg-orange-500 text-white font-bold py-4 px-10 rounded-full shadow-[0_8px_20px_rgba(255,168,0,0.4)] transition-all text-[16px] hover:-translate-y-1">
-               Get Started
+          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+             <Link to="/contact" className="w-full sm:w-auto bg-[#ffa800] hover:bg-orange-500 text-white font-bold py-4 px-10 rounded-full shadow-[0_10px_25px_rgba(255,168,0,0.4)] transition-all text-[16px] transform hover:-translate-y-1 flex items-center justify-center gap-2 group">
+               Deploy Architecture
+               <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+             </Link>
+             <Link to="/services-1" className="w-full sm:w-auto bg-transparent border-2 border-white/30 hover:border-white text-white font-bold py-4 px-10 rounded-full transition-all text-[16px] hover:bg-white/10 flex items-center justify-center">
+               View Documentation
              </Link>
           </div>
         </div>
