@@ -37,94 +37,94 @@ const ClientLogos = () => {
         <div className="animate-scroll items-center">
           
           {/* Logo Set 1 */}
-          <div className="flex w-1/2 justify-around items-center">
+          <div className="flex w-max justify-around items-center gap-12 md:gap-24 px-6 md:px-12">
              
              {/* Quantum Core */}
-             <div className="flex flex-col items-center justify-center cursor-pointer group">
+             <div className="flex flex-col items-center justify-center cursor-pointer group flex-shrink-0">
                 <div className="flex items-center gap-3">
-                   <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#0CA59D] to-[#ffa800] flex items-center justify-center shadow-[0_0_20px_rgba(12,165,157,0.4)] group-hover:rotate-180 transition-transform duration-700">
-                      <div className="w-4 h-4 bg-[#0b1c3a] rounded-sm transform rotate-45"></div>
+                   <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-gradient-to-br from-[#0CA59D] to-[#ffa800] flex items-center justify-center shadow-[0_0_20px_rgba(12,165,157,0.4)] group-hover:rotate-180 transition-transform duration-700">
+                      <div className="w-3 h-3 md:w-4 md:h-4 bg-[#0b1c3a] rounded-sm transform rotate-45"></div>
                    </div>
-                   <span className="font-extrabold text-[32px] tracking-tight text-white group-hover:text-[#0CA59D] transition-colors">Quantum<span className="font-light">Core</span></span>
+                   <span className="font-extrabold text-[24px] md:text-[32px] tracking-tight text-white group-hover:text-[#0CA59D] transition-colors">Quantum<span className="font-light">Core</span></span>
                 </div>
              </div>
 
              {/* NeuralMesh */}
-             <div className="flex flex-col items-center justify-center cursor-pointer group">
+             <div className="flex flex-col items-center justify-center cursor-pointer group flex-shrink-0">
                 <div className="flex items-center gap-2">
-                   <svg className="w-12 h-12 text-[#ffa800] group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_15px_rgba(255,168,0,0.3)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>
-                   <span className="font-black text-[28px] tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-500 group-hover:from-white group-hover:to-white transition-all">NEURALMESH</span>
+                   <svg className="w-10 h-10 md:w-12 md:h-12 text-[#ffa800] group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_15px_rgba(255,168,0,0.3)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>
+                   <span className="font-black text-[22px] md:text-[28px] tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-500 group-hover:from-white group-hover:to-white transition-all">NEURALMESH</span>
                 </div>
              </div>
 
              {/* Synthetica */}
-             <div className="flex flex-col items-center justify-center cursor-pointer group">
+             <div className="flex flex-col items-center justify-center cursor-pointer group flex-shrink-0">
                 <div className="relative">
-                   <span className="font-serif italic text-[36px] text-white opacity-80 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">Synthetica</span>
+                   <span className="font-serif italic text-[28px] md:text-[36px] text-white opacity-80 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">Synthetica</span>
                    <div className="absolute -bottom-2 left-0 w-0 h-0.5 bg-[#0CA59D] group-hover:w-full transition-all duration-500"></div>
                 </div>
              </div>
 
              {/* DeepVision */}
-             <div className="flex flex-col items-center justify-center cursor-pointer group">
-                <div className="flex items-center gap-3">
-                   <div className="w-10 h-10 border-4 border-[#0CA59D] rounded-full flex items-center justify-center group-hover:scale-125 transition-transform duration-500 shadow-[0_0_20px_rgba(12,165,157,0.3)]">
-                      <div className="w-3 h-3 bg-[#ffa800] rounded-full animate-pulse"></div>
+             <div className="flex flex-col items-center justify-center cursor-pointer group flex-shrink-0">
+                <div className="flex items-center gap-2 md:gap-3">
+                   <div className="w-8 h-8 md:w-10 md:h-10 border-[3px] md:border-4 border-[#0CA59D] rounded-full flex items-center justify-center group-hover:scale-125 transition-transform duration-500 shadow-[0_0_20px_rgba(12,165,157,0.3)]">
+                      <div className="w-2.5 h-2.5 md:w-3 md:h-3 bg-[#ffa800] rounded-full animate-pulse"></div>
                    </div>
-                   <span className="font-sans font-bold text-[34px] tracking-tighter text-white">Deep<span className="text-[#0CA59D]">Vision</span></span>
+                   <span className="font-sans font-bold text-[26px] md:text-[34px] tracking-tighter text-white">Deep<span className="text-[#0CA59D]">Vision</span></span>
                 </div>
              </div>
 
              {/* OmniData */}
-             <div className="flex flex-col items-center justify-center cursor-pointer group">
-                <span className="font-sans font-black text-[38px] uppercase tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-gray-200 group-hover:from-[#ffa800] group-hover:to-[#ffc14d] transition-all">
+             <div className="flex flex-col items-center justify-center cursor-pointer group flex-shrink-0">
+                <span className="font-sans font-black text-[30px] md:text-[38px] uppercase tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-gray-200 group-hover:from-[#ffa800] group-hover:to-[#ffc14d] transition-all">
                   OMNI<span className="font-light">DATA</span>
                 </span>
              </div>
           </div>
 
           {/* Logo Set 2 (Duplicate for infinite scroll) */}
-          <div className="flex w-1/2 justify-around items-center">
+          <div className="flex w-max justify-around items-center gap-12 md:gap-24 px-6 md:px-12">
              
              {/* Quantum Core */}
-             <div className="flex flex-col items-center justify-center cursor-pointer group">
+             <div className="flex flex-col items-center justify-center cursor-pointer group flex-shrink-0">
                 <div className="flex items-center gap-3">
-                   <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#0CA59D] to-[#ffa800] flex items-center justify-center shadow-[0_0_20px_rgba(12,165,157,0.4)] group-hover:rotate-180 transition-transform duration-700">
-                      <div className="w-4 h-4 bg-[#0b1c3a] rounded-sm transform rotate-45"></div>
+                   <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-gradient-to-br from-[#0CA59D] to-[#ffa800] flex items-center justify-center shadow-[0_0_20px_rgba(12,165,157,0.4)] group-hover:rotate-180 transition-transform duration-700">
+                      <div className="w-3 h-3 md:w-4 md:h-4 bg-[#0b1c3a] rounded-sm transform rotate-45"></div>
                    </div>
-                   <span className="font-extrabold text-[32px] tracking-tight text-white group-hover:text-[#0CA59D] transition-colors">Quantum<span className="font-light">Core</span></span>
+                   <span className="font-extrabold text-[24px] md:text-[32px] tracking-tight text-white group-hover:text-[#0CA59D] transition-colors">Quantum<span className="font-light">Core</span></span>
                 </div>
              </div>
 
              {/* NeuralMesh */}
-             <div className="flex flex-col items-center justify-center cursor-pointer group">
+             <div className="flex flex-col items-center justify-center cursor-pointer group flex-shrink-0">
                 <div className="flex items-center gap-2">
-                   <svg className="w-12 h-12 text-[#ffa800] group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_15px_rgba(255,168,0,0.3)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>
-                   <span className="font-black text-[28px] tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-500 group-hover:from-white group-hover:to-white transition-all">NEURALMESH</span>
+                   <svg className="w-10 h-10 md:w-12 md:h-12 text-[#ffa800] group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_15px_rgba(255,168,0,0.3)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>
+                   <span className="font-black text-[22px] md:text-[28px] tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-500 group-hover:from-white group-hover:to-white transition-all">NEURALMESH</span>
                 </div>
              </div>
 
              {/* Synthetica */}
-             <div className="flex flex-col items-center justify-center cursor-pointer group">
+             <div className="flex flex-col items-center justify-center cursor-pointer group flex-shrink-0">
                 <div className="relative">
-                   <span className="font-serif italic text-[36px] text-white opacity-80 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">Synthetica</span>
+                   <span className="font-serif italic text-[28px] md:text-[36px] text-white opacity-80 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">Synthetica</span>
                    <div className="absolute -bottom-2 left-0 w-0 h-0.5 bg-[#0CA59D] group-hover:w-full transition-all duration-500"></div>
                 </div>
              </div>
 
              {/* DeepVision */}
-             <div className="flex flex-col items-center justify-center cursor-pointer group">
-                <div className="flex items-center gap-3">
-                   <div className="w-10 h-10 border-4 border-[#0CA59D] rounded-full flex items-center justify-center group-hover:scale-125 transition-transform duration-500 shadow-[0_0_20px_rgba(12,165,157,0.3)]">
-                      <div className="w-3 h-3 bg-[#ffa800] rounded-full animate-pulse"></div>
+             <div className="flex flex-col items-center justify-center cursor-pointer group flex-shrink-0">
+                <div className="flex items-center gap-2 md:gap-3">
+                   <div className="w-8 h-8 md:w-10 md:h-10 border-[3px] md:border-4 border-[#0CA59D] rounded-full flex items-center justify-center group-hover:scale-125 transition-transform duration-500 shadow-[0_0_20px_rgba(12,165,157,0.3)]">
+                      <div className="w-2.5 h-2.5 md:w-3 md:h-3 bg-[#ffa800] rounded-full animate-pulse"></div>
                    </div>
-                   <span className="font-sans font-bold text-[34px] tracking-tighter text-white">Deep<span className="text-[#0CA59D]">Vision</span></span>
+                   <span className="font-sans font-bold text-[26px] md:text-[34px] tracking-tighter text-white">Deep<span className="text-[#0CA59D]">Vision</span></span>
                 </div>
              </div>
 
              {/* OmniData */}
-             <div className="flex flex-col items-center justify-center cursor-pointer group">
-                <span className="font-sans font-black text-[38px] uppercase tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-gray-200 group-hover:from-[#ffa800] group-hover:to-[#ffc14d] transition-all">
+             <div className="flex flex-col items-center justify-center cursor-pointer group flex-shrink-0">
+                <span className="font-sans font-black text-[30px] md:text-[38px] uppercase tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-gray-200 group-hover:from-[#ffa800] group-hover:to-[#ffc14d] transition-all">
                   OMNI<span className="font-light">DATA</span>
                 </span>
              </div>
